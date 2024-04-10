@@ -11,49 +11,51 @@
         <h2>Customer Contact Form</h2>
         <form id="customerForm" class="customer-form">
             <div class="form-group">
-                <label for="customerID">Customer ID:</label>
+                <label for="customerID">Customer ID</label>
                 <input type="text" id="customerID" name="customerID" readonly>
             </div>
             <div class="form-group">
-                <label for="firstName">First Name:</label>
+                <label for="firstName">First Name<sup>*</sup></label>
                 <input type="text" id="firstName" name="firstName" required minlength="2" placeholder="Enter your first name">
             </div>
             <div class="form-group">
-                <label for="lastName">Last Name:</label>
-                <input type="text" id="lastName" name="lastName" required minlength="2" placeholder="Enter your last name">
+                <label for="lastName">Last Name<sup>*</sup></label>
+                <input type="text" id="lastName" name="lastName" required minlength="2" placeholder="Enter your last name" >
             </div>
             <div class="form-group">
-                <label for="dob">Date of Birth:</label>
+                <label for="dob">Date of Birth<sup>*</sup></label>
                 <input type="date" id="dob" name="dob" required>
             </div>
             <div class="form-group">
-                <label>Gender:</label>
+                <label>Gender<sup>*</sup></label>
                 <div class="radio-group">
-                    <input type="radio" id="male" name="gender" value="male">
+                    <input type="radio" id="male" name="gender" value="male" required>
                     <label for="male">Male</label>
-                    <input type="radio" id="female" name="gender" value="female">
+                    <input type="radio" id="female" name="gender" value="female" required>
                     <label for="female">Female</label>
                 </div>
             </div>
             <div class="form-group">
-                <label for="email">Email Address:</label>
+                <label for="email">Email Address<sup>*</sup></label>
                 <input type="email" id="email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Enter your email">
             </div>
             <div class="form-group">
-                <label for="phone">Phone Number:</label>
+                <label for="phone">Phone Number<sup>*</sup></label>
                 <input type="tel" id="phone" name="phone" required pattern="\+\d{1}\(\d{3}\)\d{3}-\d{4}" placeholder="+1(666)111-2222">
             </div>
             <div class="form-group">
-                <label for="password">Password:</label>
+                <label for="password">Password<sup>*</sup></label>
                 <input type="password" id="password" name="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{12,}" placeholder="Enter a complex password">
             </div>
             <div class="form-group">
-                <label for="newsletter">Subscribe to Newsletter:</label>
-                <input type="checkbox" id="newsletter" name="newsletter">
+                <div class="checkbox-container">
+                    <input type="checkbox" id="subscribe" name="subscribe">
+                    <label for="subscribe">Subscribe to newsletter</label>
+                  </div>
             </div>
             <div class="form-group">
-                <label for="comments">Remarks/Comments:</label>
-                <textarea id="comments" name="comments" placeholder="Your comments"></textarea>
+                <label for="comments">Remarks/Comments<sup>*</sup></label>
+                <textarea id="comments" name="comments" placeholder="Your comments" rows="6"></textarea>
             </div>
             <div class="form-group">
                 <button type="submit" class="submit-btn">Submit</button>

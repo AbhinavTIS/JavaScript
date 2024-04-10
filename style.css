@@ -163,3 +163,23 @@ h2 {
 .form-group input[type="password"]:valid {
     border-color: #28a745;
 }
+
+
+.checkbox-container {
+    display: flex;
+    align-items: left; 
+    margin-left: 0;
+  }
+  
+  .checkbox-container input[type="checkbox"] {
+    margin-right: 10px;
+    padding: 0;
+  }
+
+  textarea {
+    resize: none;
+  }
+
+  sup{
+    color: red;
+  }
