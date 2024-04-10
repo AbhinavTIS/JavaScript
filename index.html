@@ -26,12 +26,14 @@
                 <label for="dob">Date of Birth:</label>
                 <input type="date" id="dob" name="dob" required>
             </div>
-            <div class="form-group gender">
+            <div class="form-group">
                 <label>Gender:</label>
-                <input type="radio" id="male" name="gender" value="male">
-                <label for="male">Male</label>
-                <input type="radio" id="female" name="gender" value="female">
-                <label for="female">Female</label>
+                <div class="radio-group">
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Female</label>
+                </div>
             </div>
             <div class="form-group">
                 <label for="email">Email Address:</label>
@@ -46,7 +48,7 @@
                 <input type="password" id="password" name="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{12,}" placeholder="Enter a complex password">
             </div>
             <div class="form-group">
-                <label for="newsletter">Newsletter Subscription:</label>
+                <label for="newsletter">Subscribe to Newsletter:</label>
                 <input type="checkbox" id="newsletter" name="newsletter">
             </div>
             <div class="form-group">
