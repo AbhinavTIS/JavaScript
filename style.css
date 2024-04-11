@@ -15,7 +15,9 @@ body {
     background-position: center;
     background-attachment: fixed;
 }
-
+.error-message{
+    color: red;
+}
 .container {
     max-width: 800px;
     margin: 30px auto;

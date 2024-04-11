@@ -21,22 +21,31 @@ function validateForm() {
     const email = document.getElementById('email').value.trim();
     const phone = document.getElementById('phone').value.trim();
     const password = document.getElementById('password').value;
+    const dob = document.getElementById('dob').value;
+    const gender = document.querySelector( 'input[name="gender"]:checked'); 
+    const comments = document.getElementById('comments').value.trim();
     let formIsValid = true; // Flag to determine if form should submit
 
-    // Validate the first name
-    if (firstName.length < 2) {
-        showError('firstName', 'First name must be at least 2 characters.');
+    if (!validateName(firstName)) {
+        showError('firstName', 'First name must contain only alphabets and be at least 2 characters.');
         formIsValid = false;
     } else {
         clearError('firstName');
     }
 
     // Validate the last name
-    if (lastName.length < 2) {
-        showError('lastName', 'Last name must be at least 2 characters.');
+    if (!validateName(lastName)) {
+        showError('lastName', 'Last name must contain only alphabets and be at least 2 characters.');
         formIsValid = false;
     } else {
         clearError('lastName');
+    }
+    console.log(gender);
+    if(gender == null) {
+        formIsValid = false;
+        showError('gender-group', 'Please select gender.'); 
+    } else {
+        clearError('gender-group');
     }
 
     // Validate the email address
@@ -46,7 +55,19 @@ function validateForm() {
     } else {
         clearError('email');
     }
-
+  // Validate the date of birth
+  if (!dob) {
+    showError('dob', 'Date of birth is required.');
+    formIsValid = false;
+} else {
+    clearError('dob');
+}
+if (comments.length === 0 || comments.length < 5) {
+    showError('comments', 'Remarks/Comments are required and must contain at least 5 characters.');
+    formIsValid = false;
+} else {
+    clearError('comments');
+}
     // Validate the phone number
     if (!validatePhoneNumber(phone)) {
         showError('phone', 'Phone number is not in the correct format.');
@@ -57,7 +78,7 @@ function validateForm() {
 
     // Validate the password
     if (!validatePassword(password)) {
-        showError('password', 'Password must meet the complexity requirements.');
+        showError('password', 'Password must contain at least one digit, one lowercase letter, one uppercase letter, and be at least 12 characters long.');
         formIsValid = false;
     } else {
         clearError('password');
@@ -70,9 +91,12 @@ function validateEmail(email) {
     const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     return re.test(email);
 }
-
+function validateName(name) {
+    const re = /^[A-Za-z]+$/;
+    return re.test(name) && name.length >= 2;
+}
 function validatePhoneNumber(phone) {
-    const re = /^\+\d{1}\(\d{3}\)\d{3}-\d{4}$/;
+    const re = /^\+[0-9]+\(\d{3}\)[0-9]+-[0-9]+$/;
     return re.test(phone);
 }
 
